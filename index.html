@@ -1,42 +1,355 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Despedida David</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Normas de Oro de la Despedida</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.5}
-    header{margin-bottom:24px}
-    h1{margin:0 0 8px}
-    .card{border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin:12px 0}
-    .muted{color:#6b7280}
-    a.button{display:inline-block;background:#111827;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px}
-    footer{margin-top:32px;font-size:14px;color:#6b7280}
+    :root {
+      --bg1: #120018;
+      --bg2: #220033;
+      --gold: #ffd166;
+      --gold-2: #ffb703;
+      --pink: #ff4da6;
+      --cyan: #39d2ff;
+      --violet: #8b5cf6;
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.18);
+      --text: #fff7e6;
+      --muted: #f7d9a8;
+      --shadow: 0 16px 40px rgba(0,0,0,.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 77, 166, 0.18), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(57, 210, 255, 0.16), transparent 24%),
+        radial-gradient(circle at 50% 80%, rgba(255, 183, 3, 0.12), transparent 26%),
+        linear-gradient(160deg, var(--bg1), var(--bg2) 55%, #07000d 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .stars, .stars::before, .stars::after {
+      position: fixed;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,.9) 50%, transparent 55%),
+        radial-gradient(2px 2px at 22% 72%, rgba(255,255,255,.8) 50%, transparent 55%),
+        radial-gradient(1.5px 1.5px at 33% 42%, rgba(255,255,255,.75) 50%, transparent 55%),
+        radial-gradient(2px 2px at 58% 20%, rgba(255,255,255,.8) 50%, transparent 55%),
+        radial-gradient(1.8px 1.8px at 72% 38%, rgba(255,255,255,.75) 50%, transparent 55%),
+        radial-gradient(2px 2px at 88% 68%, rgba(255,255,255,.85) 50%, transparent 55%),
+        radial-gradient(1.5px 1.5px at 77% 83%, rgba(255,255,255,.7) 50%, transparent 55%),
+        radial-gradient(2px 2px at 46% 90%, rgba(255,255,255,.8) 50%, transparent 55%);
+      opacity: .7;
+    }
+
+    .stars::before { filter: blur(1px); opacity: .45; transform: scale(1.1); }
+    .stars::after { filter: blur(2px); opacity: .28; transform: scale(1.2); }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      position: relative;
+      padding: 44px 28px 34px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.11), rgba(255,255,255,.05)),
+        linear-gradient(180deg, rgba(255,77,166,.12), rgba(57,210,255,.05));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: .35;
+    }
+
+    .hero::before {
+      background: var(--pink);
+      top: -80px;
+      left: -60px;
+    }
+
+    .hero::after {
+      background: var(--cyan);
+      right: -70px;
+      bottom: -100px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255, 209, 102, 0.14);
+      border: 1px solid rgba(255, 209, 102, 0.35);
+      color: var(--gold);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: .82rem;
+      margin-bottom: 16px;
+      box-shadow: 0 0 20px rgba(255, 209, 102, 0.15);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: .95;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #fff4c7;
+      text-shadow:
+        0 0 8px rgba(255, 209, 102, .45),
+        0 0 22px rgba(255, 77, 166, .25),
+        0 6px 0 rgba(0,0,0,.25);
+    }
+
+    .subtitle {
+      margin: 18px auto 0;
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .sign-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .sign {
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25), inset 0 0 24px rgba(255,255,255,.04);
+      backdrop-filter: blur(8px);
+    }
+
+    .pink { background: rgba(255, 77, 166, .14); color: #ffd2ea; }
+    .gold { background: rgba(255, 183, 3, .14); color: #fff2c0; }
+    .cyan { background: rgba(57, 210, 255, .14); color: #d7f7ff; }
+    .violet { background: rgba(139, 92, 246, .14); color: #efe3ff; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      grid-column: span 6;
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px 22px 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 46px rgba(0,0,0,.5);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--pink), var(--gold), var(--cyan));
+      opacity: .9;
+    }
+
+    .num {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(255,183,3,.22), rgba(255,77,166,.22));
+      border: 1px solid rgba(255,255,255,.14);
+      color: #fff4d6;
+      box-shadow: inset 0 0 20px rgba(255,255,255,.05), 0 10px 20px rgba(0,0,0,.25);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      line-height: 1.15;
+      color: #fff0be;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.7;
+      color: #fff7e6;
+      font-size: 1rem;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding: 22px;
+      text-align: center;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,183,3,.12), rgba(255,77,166,.10), rgba(57,210,255,.09));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      color: #fff0be;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .vegas-strip {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 110px;
+      pointer-events: none;
+      opacity: .28;
+      background:
+        linear-gradient(180deg, transparent, rgba(0,0,0,.3)),
+        repeating-linear-gradient(90deg,
+          rgba(255,183,3,.22) 0 22px,
+          rgba(57,210,255,.14) 22px 44px,
+          rgba(255,77,166,.18) 44px 66px,
+          rgba(139,92,246,.18) 66px 88px);
+      clip-path: polygon(0 100%, 0 38%, 7% 55%, 12% 24%, 18% 65%, 25% 34%, 32% 72%, 38% 28%, 45% 60%, 52% 26%, 60% 70%, 68% 24%, 76% 62%, 84% 20%, 91% 55%, 100% 34%, 100% 100%);
+    }
+
+    @media (max-width: 900px) {
+      .card { grid-column: span 12; }
+      .hero { padding: 34px 18px 28px; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 20px, 1180px); }
+      h2 { font-size: 1.28rem; }
+      p { font-size: .96rem; }
+      .num { width: 48px; height: 48px; border-radius: 14px; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Despedida de David</h1>
-    <p class="muted">Página publicada con GitHub Pages.</p>
-  </header>
+  <div class="stars"></div>
+  <div class="vegas-strip"></div>
 
-  <section class="card">
-    <h2>¡Bienvenidos!</h2>
-    <p>Esta es una página de ejemplo. Edita <code>index.html</code> para poner tu contenido: fecha, lugar, fotos y mensajes.</p>
-    <p><a class="button" href="#info">Ver información</a></p>
-  </section>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Las Vegas Edition</div>
+      <h1>Normas de Oro<br>de la Despedida</h1>
+      <p class="subtitle">
+        Reglamento oficial del viaje. Todo el contenido que aparece a continuación mantiene el texto completo del documento original, presentado en un formato visual más potente, festivo y estilo neón.
+      </p>
+      <div class="sign-row">
+        <span class="sign pink">🎰 Modo Vegas</span>
+        <span class="sign gold">🍾 Código del Grupo</span>
+        <span class="sign cyan">🌴 Neon & Party</span>
+        <span class="sign violet">🕶️ Solo Leyendas</span>
+      </div>
+    </section>
 
-  <section id="info" class="card">
-    <h2>Información</h2>
-    <ul>
-      <li><strong>Fecha:</strong> (por definir)</li>
-      <li><strong>Lugar:</strong> (por definir)</li>
-      <li><strong>Hora:</strong> (por definir)</li>
-    </ul>
-  </section>
+    <section class="grid">
+      <article class="card">
+        <div class="num">1</div>
+        <h2>Retos y Castigos</h2>
+        <p>El novio tendrá que realizar los retos organizados para cada evento. Si no se completa el reto, el novio será sometido a un castigo ya definido. Si el novio completa el reto, podrá elegir a un miembro del grupo para que realice su castigo.</p>
+      </article>
 
-  <footer>
-    <p>© 2026</p>
-  </footer>
+      <article class="card">
+        <div class="num">2</div>
+        <h2>Pacto de Silencio</h2>
+        <p>Lo que ocurre en este viaje, muere en este viaje. Se establece un Apagón Digital Total para contenido comprometido. Queda terminantemente prohibido subir fotos o vídeos a redes sociales donde aparezca el novio o cualquier miembro del grupo en situaciones que puedan comprometer su reputación. El material sensible es exclusivo del grupo de WhatsApp. El contenido que se suba a redes sociales será aprobado por el grupo.</p>
+      </article>
+
+      <article class="card">
+        <div class="num">3</div>
+        <h2>Solidaridad Blindada</h2>
+        <p>Ningún miembro del grupo se queda atrás. Si alguien "cae en combate" (cansancio o exceso de fiesta), el grupo activa el protocolo de escolta. Nadie vuelve solo al alojamiento. El grupo es el escudo del novio.</p>
+      </article>
+
+      <article class="card">
+        <div class="num">4</div>
+        <h2>Derecho a Veto</h2>
+        <p>El novio posee un solo "Pase de Libertad" para todo el viaje. Puede usarlo para saltarse un reto que considere inasumible, por ende, el castigo/premio también se extingue. Una vez gastado, el novio queda a merced de la voluntad del grupo y deberá acatar cada instrucción sin rechistar. La negativa tras el veto implica una sanción doble.</p>
+      </article>
+
+      <article class="card">
+        <div class="num">5</div>
+        <h2>Desconexión Total</h2>
+        <p>En todos los eventos, comidas, cenas y fiestas, los móviles se guardarán. Está prohibido engancharse al dispositivo.</p>
+        <p style="margin-top:10px;">Si un miembro del grupo se engancha, se le someterá al castigo que decida el novio.</p>
+        <p style="margin-top:10px;">Si es el novio quien se engancha, se le someterá al castigo que decida el grupo.</p>
+        <p style="margin-top:10px;">Solo emergencias reales. La supuesta gravedad se someterá a debate.</p>
+      </article>
+
+      <article class="card">
+        <div class="num">6</div>
+        <h2>Uniforme Sagrado</h2>
+        <p>El atuendo elegido por el grupo para cada fase del viaje es de uso obligatorio y sagrado para el novio. No podrá quitarse ninguna pieza, accesorio o complemento sin el permiso expreso de sus acompañantes. Cualquier intento de "modificar" el atuendo para pasar desapercibido será castigado de inmediato.</p>
+      </article>
+
+      <article class="card">
+        <div class="num">7</div>
+        <h2>Impuesto de Retrasos</h2>
+        <p>La puntualidad es la base del éxito. Se establece una multa de 5€ por cada 10 minutos de retraso en los puntos de encuentro (aeropuerto, lobby, transporte, etc.). El dinero recaudado formará un fondo común para la última cena o para gastos imprevistos del grupo.</p>
+      </article>
+
+      <article class="card">
+        <div class="num">8</div>
+        <h2>Zona Libre de Realidad</h2>
+        <p>Queda prohibido hablar de trabajo, hipotecas, política o problemas cotidianos. Este viaje es un paréntesis en la realidad. Quien rompa el ambiente con temas "bajoneros" deberá invitar a una ronda de chupitos para reenfocar al grupo de inmediato.</p>
+      </article>
+
+      <article class="card" style="grid-column: span 12;">
+        <div class="num">9</div>
+        <h2>Justicia financiera</h2>
+        <p>Presupuesto Cero: El novio tiene el monedero confiscado. No paga absolutamente nada (comidas, copas, entradas, transporte). Sus gastos se dividen equitativamente entre los acompañantes.</p>
+        <p style="margin-top:10px;">Justicia Financiera: Para que el grupo sea justo, no se dividen las copas entre todos. Cada acompañante paga estrictamente lo que ha consumido, más su parte proporcional del gasto del novio. Así, nadie paga de más por los caprichos ajenos. Cuentas claras, amistades largas.</p>
+      </article>
+    </section>
+
+    <section class="footer">
+      Lo que pasa en Vegas… se queda en Vegas.
+    </section>
+  </main>
 </body>
 </html>
